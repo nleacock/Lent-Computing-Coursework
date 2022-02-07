@@ -34,3 +34,28 @@ def stations_within_radius(stations, centre, r):
     
     return within_radius_list
         
+rivers = set()
+def rivers_with_stations(stations):
+    #runs through every river and adds them to a list
+    for i in stations:
+        rivers.add(i.river)
+    return rivers
+
+def stations_by_river(stations):
+    dictionary = {}
+    #for each river in the list of rivers
+    for i in rivers:
+        stationsonriver = []
+        #test every station for the selected river
+        for j in stations:
+            #check if selected station is on the river of the selected river - add station to the list if yes
+            if j.river == i:
+                #adds station to the list of stations that lie on selected river
+                stationsonriver.append(j.name)
+            else:
+                #nothing happens and returns to the loop for the next stations
+                arbitrary = 0
+        #adds the river and its corresponding stations to the dictionary
+        stationsonriver.sort()
+        dictionary[i] = stationsonriver
+    return dictionary
