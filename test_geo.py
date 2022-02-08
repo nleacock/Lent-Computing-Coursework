@@ -2,6 +2,7 @@ from floodsystem.geo import rivers_with_stations, stations_by_river, rivers_by_s
 from floodsystem.stationdata import build_station_list
 from floodsystem.utils import sorted_by_key
 from haversine import haversine, Unit
+
 def test_stations_by_distance():
     stations = build_station_list()
     dist = stations_by_distance(stations, (52.2053, 0.1218))
@@ -27,8 +28,6 @@ def test_rivers_by_station_number():
         #check that all river names are strings
         assert isinstance(req_list[i][0], str)
         assert len(req_list) >= 9
-
-<<<<<<< HEAD
 def test_rivers_with_stations():
     stations = build_station_list()
     my_list = rivers_with_stations(stations)
@@ -36,7 +35,7 @@ def test_rivers_with_stations():
         #store river name for ith element and check it is a string
         name = my_list[i]
         assert isinstance(name, str)
-        #check name is not repeated in list, except for when i=j
+       #check name is not repeated in list, except for when i=j
         for j in range(len(my_list)-1):
             if i == j:
                 pass
@@ -44,9 +43,3 @@ def test_rivers_with_stations():
                 assert name != my_list[j]
                 
 test_rivers_with_stations()
-=======
-
-test_stations_by_distance()
-test_stations_within_radius()
-test_rivers_by_station_number()
->>>>>>> 5896c674cc0962fbf3bc5711c5561aa9bad97d86
