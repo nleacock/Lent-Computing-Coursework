@@ -20,5 +20,7 @@ def test_rivers_by_station_number():
         #check that all river names are strings
         assert isinstance(req_list[i][0], str)
 
+
+
 test_stations_within_radius()
 test_rivers_by_station_number()
