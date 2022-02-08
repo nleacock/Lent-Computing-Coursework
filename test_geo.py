@@ -7,4 +7,7 @@ def test_stations_within_radius():
     within_radius = stations_within_radius(stations)
     #check that each entry is a string
     for station in within_radius:
-        assert type(station) == str
+        assert isinstance(station, str)
+
+
+
