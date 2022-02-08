@@ -1,7 +1,15 @@
-from floodsystem.geo import rivers_with_stations, stations_by_river, rivers_by_station_number, stations_within_radius
+from floodsystem.geo import rivers_with_stations, stations_by_distance, stations_by_river, rivers_by_station_number, stations_within_radius
 from floodsystem.stationdata import build_station_list
 from floodsystem.utils import sorted_by_key
 from haversine import haversine, Unit
+
+def test_stations_by_distance():
+    stations = build_station_list()
+    dist = stations_by_distance(stations, (52.2053, 0.1218))
+    for station in dist:
+        #check that the distance value in the tuple before the next tuple is less than the distance in the next tuple
+        assert dist[station][2] <= dist[station + 1][2]
+
 
 def test_stations_within_radius():
     stations = build_station_list()
