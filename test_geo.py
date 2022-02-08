@@ -49,6 +49,9 @@ def test_stations_by_river():
     #check that there is at least one station for each river
     for river in dictionary:
         assert len(dictionary[river]) >= 1
-        assert 1+1==3
+        #check each station is a string
+        for i in range(len(dictionary[river])-1):
+            assert isinstance(dictionary[river][i], str)
+
 
 test_stations_by_river()
