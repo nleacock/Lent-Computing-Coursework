@@ -11,14 +11,6 @@ def test_stations_by_distance():
         #check that the distance value in the tuple before the next tuple is less than the distance in the next tuple
         assert dist[station][2] <= dist[station + 1][2]
 
-def test_stations_by_distance():
-    stations = build_station_list()
-    dist = stations_by_distance(stations, (52.2053, 0.1218))
-    for station in dist:
-        #check that the distance value in the tuple before the next tuple is less than the distance in the next tuple
-        assert dist[station][2] <= dist[station + 1][2]
-
-
 def test_stations_within_radius():
     stations = build_station_list()
     within_radius = stations_within_radius(stations, (52.2053, 0.1218), 10)
