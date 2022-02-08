@@ -42,5 +42,13 @@ def test_rivers_with_stations():
                 pass
             else:
                 assert name != my_list[j]
-                
-test_stations_by_distance()
+
+def test_stations_by_river():
+    stations = build_station_list()
+    dictionary = stations_by_river(stations)
+    #check that there is at least one station for each river
+    for river in dictionary:
+        assert len(dictionary[river]) >= 1
+        assert 1+1==3
+
+test_stations_by_river()
