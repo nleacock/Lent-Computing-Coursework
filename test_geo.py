@@ -52,6 +52,3 @@ def test_stations_by_river():
         #check each station is a string
         for i in range(len(dictionary[river])-1):
             assert isinstance(dictionary[river][i], str)
-
-
-test_stations_by_river()
