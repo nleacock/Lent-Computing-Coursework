@@ -5,6 +5,14 @@ from haversine import haversine, Unit
 def test_stations_by_distance():
     stations = build_station_list()
     dist = stations_by_distance(stations, (52.2053, 0.1218))
+    for station in range (0, (len(dist) - 1)):
+        assert isinstance(station, int)
+        #check that the distance value in the tuple before the next tuple is less than the distance in the next tuple
+        assert dist[station][2] <= dist[station + 1][2]
+
+def test_stations_by_distance():
+    stations = build_station_list()
+    dist = stations_by_distance(stations, (52.2053, 0.1218))
     for station in dist:
         #check that the distance value in the tuple before the next tuple is less than the distance in the next tuple
         assert dist[station][2] <= dist[station + 1][2]
@@ -28,6 +36,7 @@ def test_rivers_by_station_number():
         assert isinstance(req_list[i][0], str)
         assert len(req_list) >= 9
 
+<<<<<<< HEAD
 def test_rivers_with_stations():
     stations = build_station_list()
     my_list = rivers_with_stations(stations)
@@ -43,3 +52,9 @@ def test_rivers_with_stations():
                 assert name != my_list[j]
                 
 test_rivers_with_stations()
+=======
+
+test_stations_by_distance()
+test_stations_within_radius()
+test_rivers_by_station_number()
+>>>>>>> 5896c674cc0962fbf3bc5711c5561aa9bad97d86
