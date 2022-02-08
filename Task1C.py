@@ -10,4 +10,5 @@ def run():
     
     print(stations_within_10km_of_ccc)
 
-run()
+if __name__ == "__main__":
+    run()

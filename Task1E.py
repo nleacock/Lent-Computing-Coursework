@@ -9,4 +9,5 @@ def run():
     print(relevant_list)
 
 
-run()    
+if __name__ == "__main__":
+    run() 
