@@ -33,47 +33,6 @@ def stations_within_radius(stations, centre, r):
             within_radius_list.append(i.name)
     
     return within_radius_list
-<<<<<<< HEAD
-
-
-def rivers_by_station_number(stations, N):
-    """""""function that determines the N number of rivers with greatest monitoring stations, returning a list of river-station tuples, sorted by number of stations"""""""
-    """""""if more rivers with same no of stations than Nth entry, include these other rivers"""""""
-    #make a new list of tuples with river name/number of stations pairs (unordered)
-    unordered_list = []
-    for i in stations:
-       #find river in station
-       river = i.river
-       #check if river exists in unordered_list yet, if so add one to counter, if not, add new list and start counter at 1
-       for j in unordered_list:
-            if river == j[0]:
-               j[1] += 1
-            else:
-                unordered_list.append([river, 1])
-    #sort by number of rivers
-    ordered_list = sorted_by_key(unordered_list, 1)
-    #convert from lists to tuples
-    ordered_tuples = []
-    for k in ordered_list:
-        ordered_tuples.append((k[0],k[1]))
-    #produce list of rivers with N most stations
-    final_list_finally_lol = []
-    m = 0
-    while m < N-1:
-        final_list_finally_lol.append[ordered_tuples[-1-m]]
-        m += 1
-    #append extra rivers beyond N with same number of stations as N
-    last_no_stations = final_list_finally_lol[-1][1]
-    same = True
-    while same == True:
-        if ordered_tuples[-m][1] == last_no_stations:
-            final_list_finally_lol.append(ordered_tuples[-m])
-            m += 1
-        else:
-            same = False
-    
-    return final_list_finally_lol
-=======
         
 rivers = set()
 def rivers_with_stations(stations):
@@ -100,4 +59,27 @@ def stations_by_river(stations):
         stationsonriver.sort()
         dictionary[i] = stationsonriver
     return dictionary
->>>>>>> 9a0ff1173674ccb04776061f9ae31f94be3189ee
+
+def rivers_by_station_number(stations, N):
+    """""""function that determines the N number of rivers with greatest monitoring stations, returning a list of river-station tuples, sorted by number of stations"""""""
+    """""""if more rivers with same no of stations than Nth entry, include these other rivers"""""""
+    #use 1d function to create dictionary with rivers as keys and corresponding stations
+    dictionary2 = stations_by_river(stations)
+    print(dictionary2)
+    #go through each river and make a list of the number of stations per river, in descending order
+    req_rivers = []
+    stations_per_river = []
+    for river in dictionary2:
+        stations_per_river.append(len(dictionary2[river]))
+    sorted_stations_per_river = sorted(stations_per_river)
+    sorted_stations_per_river.reverse()
+    #set the minimum no of stations to be included, based on N inputted
+    min_station_number = sorted_stations_per_river[N-1]
+    #go back to original dictionary and find the corresponding rivers and create list
+    for river in dictionary2:
+        if len(dictionary2[river]) >= min_station_number:
+            req_rivers.append(river, len(dictionary2[river]))
+    final_list = sorted_by_key(req_rivers,1)
+    final_list.reverse()
+    
+    return final_list
