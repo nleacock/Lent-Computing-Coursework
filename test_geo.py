@@ -28,9 +28,10 @@ def test_rivers_by_station_number():
         #check that all river names are strings
         assert isinstance(req_list[i][0], str)
         assert len(req_list) >= 9
+
 def test_rivers_with_stations():
     stations = build_station_list()
-    my_list = rivers_with_stations(stations)
+    my_list = list(rivers_with_stations(stations))
     for i in range(len(my_list)-1):
         #store river name for ith element and check it is a string
         name = my_list[i]
@@ -42,4 +43,4 @@ def test_rivers_with_stations():
             else:
                 assert name != my_list[j]
                 
-test_rivers_with_stations()
+test_stations_by_distance()
