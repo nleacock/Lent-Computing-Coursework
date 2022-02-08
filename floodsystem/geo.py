@@ -64,8 +64,9 @@ def rivers_by_station_number(stations, N):
     """""""function that determines the N number of rivers with greatest monitoring stations, returning a list of river-station tuples, sorted by number of stations"""""""
     """""""if more rivers with same no of stations than Nth entry, include these other rivers"""""""
     #use 1d function to create dictionary with rivers as keys and corresponding stations
+    #i have absolutely no clue why, but WHATEVER YOU DO, DON'T DELETE THE NEXT LINE OR FOR SOME UNKNOWN RETARDED REASON THE CODE NO LONGER WORKS
+    whyonearthisthisvariableneeded = rivers_with_stations(stations)
     dictionary2 = stations_by_river(stations)
-    print(dictionary2)
     #go through each river and make a list of the number of stations per river, in descending order
     req_rivers = []
     stations_per_river = []
@@ -78,7 +79,7 @@ def rivers_by_station_number(stations, N):
     #go back to original dictionary and find the corresponding rivers and create list
     for river in dictionary2:
         if len(dictionary2[river]) >= min_station_number:
-            req_rivers.append(river, len(dictionary2[river]))
+            req_rivers.append((river, len(dictionary2[river])))
     final_list = sorted_by_key(req_rivers,1)
     final_list.reverse()
     
