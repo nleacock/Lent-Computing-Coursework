@@ -64,7 +64,7 @@ def rivers_by_station_number(stations, N):
     """""""function that determines the N number of rivers with greatest monitoring stations, returning a list of river-station tuples, sorted by number of stations"""""""
     """""""if more rivers with same no of stations than Nth entry, include these other rivers"""""""
     #use 1d function to create dictionary with rivers as keys and corresponding stations
-    #i have absolutely no clue why, but WHATEVER YOU DO, DON'T DELETE THE NEXT LINE OR FOR SOME UNKNOWN RETARDED REASON THE CODE NO LONGER WORKS
+    #i have absolutely no clue why, but WHATEVER YOU DO, DON'T DELETE THE NEXT LINE OR FOR SOME UNKNOWN REASON THE CODE NO LONGER WORKS
     whyonearthisthisvariableneeded = rivers_with_stations(stations)
     dictionary2 = stations_by_river(stations)
     #go through each river and make a list of the number of stations per river, in descending order
