@@ -13,3 +13,11 @@ def test_stations_within_radius():
 
 def test_rivers_by_station_number():
     stations = build_station_list()
+    req_list = rivers_by_station_number(stations, N=9)
+    print(req_list)
+    #check that number of stations are in descending order
+    for i in range(len(req_list)-1):
+        assert req_list[i][1] >= req_list[i+1][1]
+    
+
+test_rivers_by_station_number()
