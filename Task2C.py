@@ -4,7 +4,8 @@ def run():
     stations = build_station_list()
     update_water_levels(stations)
     at_risk = stations_highest_rel_level(stations, 10)
-    print(at_risk)
+    for element in at_risk:
+        print(element[0], element[1])
 
 if __name__ == "__main__":
     run()
