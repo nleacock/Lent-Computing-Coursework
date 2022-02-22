@@ -7,6 +7,9 @@ for manipulating/modifying station data
 """
 
 
+from sympy import Rational
+
+
 class MonitoringStation:
     """This class represents a river level monitoring station"""
 
@@ -47,13 +50,25 @@ class MonitoringStation:
         else:
             return True
 
-   # def relative_water_level(self):
-     #   latest_water_level = #select water level
-        #latest / typical range = ratio
-        #if ratio = 1: corresponds to typical high
-        #else if ratio = 0: corresponds to typical low
-        #else return none
-      #  return latest_water_level
+    def relative_water_level(self):
+        latest_water_level = self.latest_level
+        typical = self.typical_range[1] - self.typical_range[0]
+        try:
+            ratio = latest_water_level/typical
+            if ratio == 1.0:
+                print("The current level corresponds to a typical high")
+                return Rational
+            elif ratio == 0.0:
+                print("The current level corrsponds to a typical low")
+                return ratio
+            elif ratio > 0.0 and ratio < 1.0:
+                return ratio
+            elif ratio > 1.0:
+                return ratio
+            else:
+                return None
+        except:
+            return None
 
 def inconsistent_typical_range_stations(stations):
     inconsistentstations = []
