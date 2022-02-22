@@ -1,6 +1,8 @@
 
 
 from floodsystem.utils import sorted_by_key
+from floodsystem.stationdata import build_station_list
+
 
 def stations_highest_rel_level(stations, N):
     """""""take the code from 2B and chop off the first N terms, i.e. generate a list of the N stations with the highest relative levels"""""""
@@ -15,3 +17,11 @@ def stations_highest_rel_level(stations, N):
         sorted_list.pop(i)
 
     return sorted_list
+
+def run():
+    stations = build_station_list()
+    at_risk = stations_highest_rel_level(stations, 10)
+    print(at_risk)
+
+if __name__ == "__main__":
+    run()

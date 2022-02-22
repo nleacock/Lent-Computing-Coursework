@@ -51,13 +51,14 @@ class MonitoringStation:
             return True
 
     def relative_water_level(self):
-        latest_water_level = self.latest_level
-        typical = self.typical_range[1] - self.typical_range[0]
         try:
+            latest_water_level = self.latest_level    
+            
+typical = self.typical_range[1] - self.typical_range[0]
             ratio = latest_water_level/typical
             if ratio == 1.0:
                 print("The current level corresponds to a typical high")
-                return Rational
+                return ratio
             elif ratio == 0.0:
                 print("The current level corrsponds to a typical low")
                 return ratio
