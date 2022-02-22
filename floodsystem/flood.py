@@ -8,4 +8,6 @@ def stations_level_over_threshold(stations, tol):
         elif station.relative_water_level() > tol:
             tuple = (station.name, station.relative_water_level())
             list_of_tuples.append(tuple)
+        else:
+            pass
     return list_of_tuples

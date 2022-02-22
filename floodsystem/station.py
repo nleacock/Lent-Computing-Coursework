@@ -42,7 +42,7 @@ class MonitoringStation:
         d += "   typical range: {}".format(self.typical_range)
         return d
 
-    def typical_range_consistent(self):
+    def typical_range_consistent(self): 
         if self.typical_range == None:
             return False
         elif self.typical_range[1] < self.typical_range[0]:
@@ -52,18 +52,15 @@ class MonitoringStation:
 
     def relative_water_level(self):
         latest_water_level = self.latest_level
-        typical = self.typical_range[1] - self.typical_range[0]
+        if self.typical_range == None:
+            pass
+        else:
+            typical = self.typical_range[1] - self.typical_range[0]
         try:
-            ratio = latest_water_level/typical
-            if ratio == 1.0:
-                print("The current level corresponds to a typical high")
-                return Rational
-            elif ratio == 0.0:
-                print("The current level corrsponds to a typical low")
+            ratio = (latest_water_level) / (typical)
+            if ratio > 0.0 and ratio < 1.0:
                 return ratio
-            elif ratio > 0.0 and ratio < 1.0:
-                return ratio
-            elif ratio > 1.0:
+            elif ratio >= 1.0:
                 return ratio
             else:
                 return None
