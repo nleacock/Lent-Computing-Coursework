@@ -46,7 +46,6 @@ def run():
     for date, level in zip(dates, levels):
         print(date, level)
 
-
 if __name__ == "__main__":
     print("*** Task 2D: CUED Part IA Flood Warning System ***")
     run()
