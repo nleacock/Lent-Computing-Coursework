@@ -7,8 +7,6 @@ for manipulating/modifying station data
 """
 
 
-from sympy import Rational
-
 
 class MonitoringStation:
     """This class represents a river level monitoring station"""
