@@ -5,7 +5,7 @@ def run():
     update_water_levels(stations)
     at_risk = stations_highest_rel_level(stations, 10)
     for element in at_risk:
-        print(element[0], element[1])
+        print(element[0].name, element[1])
 
 if __name__ == "__main__":
     run()

@@ -6,7 +6,7 @@ def run():
     update_water_levels(stations)
     stationsover = stations_level_over_threshold(stations, 0.8)
     for element in stationsover:
-        print(element[0], element[1])
+        print(element[0].name, element[1])
 
 
 if __name__ == "__main__":
