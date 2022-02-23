@@ -23,6 +23,7 @@ def plot_water_level_with_fit(station, dates, levels, p):
     x = plt.dates.date2num(dates)
     x1 = np.linspace(x[0], x[-1], 30)
     plt.plot(x1, poly(x1 - d0))
+    plt.title(station.name)
 
     # Display plot
     plt.show()
