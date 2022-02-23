@@ -14,6 +14,7 @@ def plot_water_levels(stations, dates, levels, i):
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.legend()
+    plt.show()
 
 def plot_water_level_with_fit(station, dates, levels, p):
     """""""plots water level data and best fit polynomial"""""""
