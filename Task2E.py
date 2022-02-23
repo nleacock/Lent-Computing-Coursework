@@ -9,8 +9,10 @@ def run():
     stations = build_station_list()
     update_water_levels(stations)
     dt = 10
-    dates, levels = fetch_measure_levels(stations[0].measure_id, dt=datetime.timedelta(days=dt))
-    plot_water_levels(stations, dates, levels)
 
+    for i in range (0, 5):
+        dates, levels = fetch_measure_levels(stations[i].measure_id, dt=timedelta(days=dt))
+        plot_water_levels(stations, dates, levels, i)
+        
 if __name__ == "__main__":
     run()
