@@ -1,3 +1,4 @@
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 from datetime import datetime, timedelta
@@ -24,12 +25,13 @@ def plot_water_level_with_fit(station, dates, levels, p):
 
     # Use polyfit to define the polynomial required and the shift
     poly, d0 = polyfit(dates, levels, p)
+    print(poly,d0)
 
     #plot the polynomial for 30 points, calculating at the shifted values and then plotting at the actual values
-    x = plt.dates.date2num(dates)
+    x = matplotlib.dates.date2num(dates)
     x1 = np.linspace(x[0], x[-1], 30)
     plt.plot(x1, poly(x1 - d0))
-    plt.title(station.name)
+    plt.title(station[0].name)
 
     # Display plot
     plt.show()

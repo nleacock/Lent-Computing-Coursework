@@ -7,14 +7,16 @@ def polyfit(dates, levels, p):
     x = plt.dates.date2num(dates)
     #subtract the first time from the rest of the list, then store this as the time shift, d0
     d0 = x[0]
-    x = x - x[0]
+    new_x = x - x[0]
     # Find coefficients of best-fit polynomial of degree p
-    p_coeff = np.polyfit(x, levels, p)
+    p_coeff = np.polyfit(new_x, levels, p)
 
     # Convert coefficient into a polynomial that can be evaluated
     poly = np.poly1d(p_coeff)
-
     return poly, d0
+
+
+
 
 
 
