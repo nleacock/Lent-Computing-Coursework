@@ -12,7 +12,7 @@ def test_polyfit():
     update_water_levels(stations)
     #find the polynomial and shift for the first few stations, and assert their types
     for station in stations:
-        dates, levels = fetch_measure_levels(station[0].measure_id, dt=datetime.timedelta(days=2))
+        dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=2))
         poly, d0 = polyfit(dates, levels, 4)
         assert isinstance(poly, numpy.poly1d)
         assert isinstance(d0, float)
