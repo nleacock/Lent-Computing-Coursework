@@ -1,7 +1,6 @@
-from distutils.command.build import build
 from floodsystem.geo import stations_by_distance
 from floodsystem.stationdata import build_station_list
-from floodsystem.station import MonitoringStation
+
 
 def run():
     stations = build_station_list()

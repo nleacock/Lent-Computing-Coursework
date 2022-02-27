@@ -2,9 +2,8 @@ import datetime
 from floodsystem.geo import build_station_list
 from floodsystem.stationdata import update_water_levels
 from floodsystem.datafetcher import fetch_measure_levels
-from floodsystem.analysis import polyfit
 from floodsystem.plot import plot_water_level_with_fit
-from floodsystem.flood import stations_highest_rel_level, stations_level_over_threshold
+from floodsystem.flood import stations_level_over_threshold
         
 def run():
     stations = build_station_list()
