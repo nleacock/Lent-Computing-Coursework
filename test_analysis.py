@@ -13,6 +13,7 @@ def test_polyfit():
     #find the polynomial and shift for the first few stations, and assert their types
     for station in stations:
         try:
+            #check to try and remove the errors from Letcombe Bassett having empty lists
             dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=2))
             poly, d0 = polyfit(dates, levels, 4)
             assert isinstance(poly, numpy.poly1d)
