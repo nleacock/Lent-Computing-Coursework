@@ -55,7 +55,7 @@ class MonitoringStation:
         else:
             typical = self.typical_range[1] - self.typical_range[0]
         try:
-            ratio = (latest_water_level) / (typical)
+            ratio = (latest_water_level - self.typical[0]) / (typical)
             if ratio > 0.0 and ratio < 1.0:
                 return ratio
             elif ratio >= 1.0:
