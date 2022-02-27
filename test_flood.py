@@ -27,7 +27,7 @@ def test_stations_highest_rel_level():
     update_water_levels(stations)
     desired_stations = stations_highest_rel_level(stations, N=10)
     #check resulting list of tuples of station and water level
-        for i in range(0, len(desired_stations)-1):
+    for i in range(0, len(desired_stations)-1):
         #check type
         assert isinstance(desired_stations[i], tuple)
         assert isinstance(desired_stations[i][0], MonitoringStation)
