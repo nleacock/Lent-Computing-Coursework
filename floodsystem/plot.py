@@ -25,7 +25,6 @@ def plot_water_level_with_fit(station, dates, levels, p):
 
     # Use polyfit to define the polynomial required and the shift
     poly, d0 = polyfit(dates, levels, p)
-    print(poly,d0)
 
     #plot the polynomial for 30 points, calculating at the shifted values and then plotting at the actual values, and horizontal lines at typical highs and lows
     x = matplotlib.dates.date2num(dates)
