@@ -6,7 +6,16 @@ from floodsystem.analysis import polyfit
 from floodsystem.flood import stations_level_over_threshold
 from floodsystem.stationdata import build_station_list, update_water_levels
 
+"""Explanation
 
+If the derivative is positive, then the water levels are increasing, hence the flood risk increases.
+If the relative water level is higher than the typical high, then flooding may occur if the water levels are increasing
+Severe flood risk if 1.5 relative water level and a positive derivative
+High flood risk if 1.0 relative water level and a positive derivative
+Moderate flood risk if 0.75 relative water level and a positive derivate
+Low flood risk if any other combination.
+
+"""
 def run():
     stations = build_station_list()
     update_water_levels(stations)
