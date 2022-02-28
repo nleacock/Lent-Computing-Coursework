@@ -6,7 +6,7 @@ def polyfit(dates, levels, p):
     
     if dates == [] or levels == []:
         poly = np.poly1d(0)
-        d0 = 0
+        d0 = 0.0
     
     else:
         #convert the date values to time in days, x
