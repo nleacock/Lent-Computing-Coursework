@@ -13,5 +13,4 @@ def polyfit(dates, levels, p):
 
     # Convert coefficient into a polynomial that can be evaluated
     poly = np.poly1d(p_coeff)
-    print(type(poly))
     return poly, d0
