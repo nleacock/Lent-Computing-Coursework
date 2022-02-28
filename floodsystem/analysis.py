@@ -5,7 +5,8 @@ def polyfit(dates, levels, p):
     """""""convert the history of water level into a polynomial and a shift of the time axis"""""""
     
     if dates == [] or levels == []:
-        pass
+        poly = np.poly1d(0)
+        d0 = 0
     
     else:
         #convert the date values to time in days, x
