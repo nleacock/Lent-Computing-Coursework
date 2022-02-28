@@ -20,8 +20,6 @@ def test_stations_level_over_threshold():
 
 
 
-
-
 def test_stations_highest_rel_level():
     stations = build_station_list()
     update_water_levels(stations)
