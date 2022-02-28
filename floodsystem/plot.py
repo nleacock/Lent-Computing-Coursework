@@ -7,8 +7,8 @@ from floodsystem.datafetcher import fetch_measure_levels
 
 def plot_water_levels(station, dates, levels):
     plt.plot(dates, levels, label="Water level")
-    plt.axhline(1.0, color="red", label="Typical high")
-    plt.axhline(0.0, color="green", label="Typical low")
+    plt.axhline(station.typical_range[1], color="red", label="Typical high")
+    plt.axhline(station.typical_range[0], color="green", label="Typical low")
     plt.xlabel("Date")
     plt.ylabel("Relative water level (m)")
     plt.title("Station: {}".format(station.name))
@@ -30,8 +30,8 @@ def plot_water_level_with_fit(station, dates, levels, p):
     x = matplotlib.dates.date2num(dates)
     x1 = np.linspace(x[0], x[-1], 30)
     plt.plot(x1, poly(x1 - d0), label="polynomial approximation")
-    plt.axhline(1.0, color="red", label="Typical high")
-    plt.axhline(0.0, color="green", label="Typical low")
+    plt.axhline(station[0].typical_range[1], color="red", label="Typical high")
+    plt.axhline(station[0].typical_range[0], color="green", label="Typical low")
     plt.title(station[0].name)
     plt.xticks(rotation=45)
     plt.tight_layout()
