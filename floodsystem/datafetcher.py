@@ -139,5 +139,6 @@ def fetch_measure_levels(measure_id, dt):
             levels.append(measure['value'])
         except:
             levels.append(None)
+            #remove if this doesnt change
 
     return dates, levels
