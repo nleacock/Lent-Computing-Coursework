@@ -11,7 +11,7 @@ def test_polyfit():
     stations = build_station_list()
     update_water_levels(stations)
     #find the polynomial and shift for the first few stations, and assert their types
-    for i in range(0, len(stations)):
+    for i in range(0, 100):
         dates, levels = fetch_measure_levels(stations[i].measure_id, dt=datetime.timedelta(days=2))
         # try and remove empty list problem with Letcombe Bassett
         if dates == [] or levels == []:
