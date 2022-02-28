@@ -1,10 +1,10 @@
-import matplotlib as plt
+import matplotlib.dates as plt
 import numpy as np
 
 def polyfit(dates, levels, p):
     """""""convert the history of water level into a polynomial and a shift of the time axis"""""""
     #convert the date values to time in days, x
-    x = plt.dates.date2num(dates)
+    x = plt.date2num(dates)
     #subtract the first time from the rest of the list, then store this as the time shift, d0
     d0 = x[0]
     new_x = x - x[0]
