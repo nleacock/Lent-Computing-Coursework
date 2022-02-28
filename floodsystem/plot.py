@@ -10,7 +10,7 @@ def plot_water_levels(station, dates, levels):
     plt.axhline(station.typical_range[1], color="red", label="Typical high")
     plt.axhline(station.typical_range[0], color="green", label="Typical low")
     plt.xlabel("Date")
-    plt.ylabel("Relative water level (m)")
+    plt.ylabel("Water level (m)")
     plt.title("Station: {}".format(station.name))
     plt.xticks(rotation=45)
     plt.tight_layout()
