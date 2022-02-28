@@ -16,9 +16,10 @@ def test_polyfit():
         # try and remove empty list problem with Letcombe Bassett
         if dates == [] or levels == []:
             pass
-        #else:
+        else:
           #  poly, d0 = polyfit(dates, levels, 4)
           #  assert isinstance(poly, numpy.poly1d)
           #  assert isinstance(d0, float)
           #  #check that d0 is bigger than 0 for all values
           #  assert d0 >= 0
+          pass
