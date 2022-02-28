@@ -18,4 +18,4 @@ def test_polyfit():
         assert isinstance(poly, numpy.poly1d)
         assert isinstance(d0, float)
         #check that d0 is bigger than 0 for all values
-        assert d0 > 0
+        assert d0 >= 0
